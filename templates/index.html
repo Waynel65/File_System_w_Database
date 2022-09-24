@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome!</title>
+    <meta charset="UTF-8">
+</head>
+<style>
+    table, th, td {
+  border: 1px solid black;
+}
+</style>
+
+<body>
+    <h2>View, Download or Upload New Files!</h2>
+    <form method="POST" action="/" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button>Submit</button>
+    </form>
+    <table>
+        <tr>
+            <th> File Name </th>
+            <th> Date Added </th>
+        </tr>
+
+        {% for file in file_info %}
+            <tr>
+                <td> {{file.File_Name}}</td>
+                <td> {{file.Date_Added}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+    
+</html>
