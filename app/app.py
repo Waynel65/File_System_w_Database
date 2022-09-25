@@ -1,6 +1,9 @@
 from config import * 
 from database import *
 
+
+db.create_all() # table is created upon running the flask application
+
 @app.route("/", methods=["GET", "POST"]) # index page
 def index():
     if request.method == "POST": # request to upload file
@@ -20,14 +23,12 @@ def download():
         file_id = request.form.get("file_id")
         file = Files.query.filter_by(id=file_id).first() 
         return send_file(BytesIO(file.data), attachment_filename=file.file_name, as_attachment=True) # convert bytes back to actual file
-                                                                                                     # download as a attachment
 
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
 
 
 # Notes:
-# add list by order function
 # connect to docker

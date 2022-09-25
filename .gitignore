@@ -1,3 +1,4 @@
 creds.py
 file_env
 *.pyc
+.DS_Store

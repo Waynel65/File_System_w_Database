@@ -1,6 +1,7 @@
-from config import *
-
 # a table in the file sys database
+from config import db
+from sqlalchemy.sql import func
+
 class Files(db.Model): 
     id = db.Column(db.Integer, primary_key=True)
     file_name = db.Column(db.String(50))

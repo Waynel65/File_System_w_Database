@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  file_db: # name of the service
+    container_name: file_db
+    image: mysql:latest
+    # env_file: mysql.conf
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+    ports:
+      - "32000:3306"  
+    volumes:
+      - db_volume:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      # - ./db:/docker-entrypoint-initdb.d/
+
+
+volumes:
+  db_volume:
