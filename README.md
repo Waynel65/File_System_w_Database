@@ -20,4 +20,4 @@ This repo is for the purpose of applying for Anubis's TA position
     3. Acticate the virtual environment with `source file_env/bin/activate`, or `file_env/Scripts/activate` if you are using powershell
     4. Install the dependencies with `pip3 install -r requirements.txt`
     5. Run the server with `flask run`
-    6. See the homepage on your browser with the URL: `http://127.0.0.1:5000/`
+    6. See the homepage on your browser with the URL: `http://127.0.0.1:5000/` and have fun with the ancient file downloader!
