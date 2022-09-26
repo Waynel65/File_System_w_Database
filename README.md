@@ -4,12 +4,16 @@ This repo is for the purpose of applying for Anubis's TA position
 - To run the flask server:
 
     Part 1. Set Up the Mysql Database with Docker
+    
     0. In the project's root directory, run `docker compose up`
     1. If everything works correctly, you should see something like:
+    
         `[System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.30'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.`
+        
     2. If not, I am probably screwed
 
     Part 2. Running the Flask app and connect to the database
+    
     0. Ensure you have python3 installed
     1. cd into the `app` folder
     2. Create a virtual environtment with `python3 -m venv file_env`
