@@ -1,18 +1,28 @@
 version: '3.5'
 services:
-  file_db: # name of the service
-    container_name: file_db
+  app:
+    container_name: flask_app
+    build: ./app
+    links:
+      - fileDB # use the service name of the container that has mysql
+    ports:
+      - "5001:5000"
+    environment:
+      - PYTHONPATH=/app
+
+  fileDB: # name of the service
+    container_name: fileDB
     image: mysql:latest
     # env_file: mysql.conf
     environment:
       MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: root
     restart: always
     ports:
       - "32000:3306"  
     volumes:
       - db_volume:/var/lib/mysql
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
-      # - ./db:/docker-entrypoint-initdb.d/
 
 
 volumes:
