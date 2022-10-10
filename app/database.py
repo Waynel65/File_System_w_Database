@@ -3,6 +3,10 @@ from config import db
 from sqlalchemy.sql import func
 
 class Files(db.Model): 
+    """
+        files table
+    """
+
     id = db.Column(db.Integer, primary_key=True)
     file_name = db.Column(db.String(50))
     data = db.Column(db.LargeBinary(length=(2**24)-1)) # a medium blob that can store up to 16.78 Mb
